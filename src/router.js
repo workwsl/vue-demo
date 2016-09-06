@@ -5,14 +5,15 @@
  */
 export default (router) => {
   router.map({
-    '/foo': {
+    '/': {
       component: (resolve) => {
-        require(['./components/Foo.vue'], resolve)
+        require(['./views/index'], resolve)
       }
     },
-    '/bar': {
+    '/list': {
+      name: 'list',
       component: (resolve) => {
-        require(['./components/Bar.vue'], resolve)
+        require(['./views/list'], resolve)
       }
     }
   })
