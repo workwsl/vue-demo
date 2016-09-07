@@ -1,6 +1,6 @@
 <template>
-  <my-header></my-header>
-  <my-nav></my-nav>
+  <cn-header></cn-header>
+  <cn-nav></cn-nav>
   <div class="content">
     <p>我的左右两边有留白,我的左右两边有留白,我的左右两边有留白,我的左右两边有留白,我的左右两边有留白,我的左右两边有留白,我的左右两边有留白,我的左右两边有留白,我的左右两边有留白,我的左右两边有留白,我的左右两边有留白</p>
   </div>
@@ -37,8 +37,8 @@
     // elementDirectives: {},
     // filters: {},
     components: {
-      'my-header': Header,
-      'my-nav': Nav
+      'cn-header': Header,
+      'cn-nav': Nav
     }
     // transitions: {},
     // partials: {},
