@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router' // vue router
-import routerMap from './router.js' // router config
+import routerMap from './router' // router config
+import App from './main.vue'
 // use vuerouter
 Vue.use(VueRouter)
 
-const App = Vue.extend({})
 const router = new VueRouter()
 // router config
 routerMap(router)

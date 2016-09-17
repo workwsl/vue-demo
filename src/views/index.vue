@@ -1,13 +1,15 @@
 <template>
-  <img src="../assets/logo.png" class="logo" alt="vue" />
+  <div class="">
+    <img src="../assets/logo.png" class="logo" alt="vue" />
+  </div>
+
 </template>
 
 <script>
   export default {
     ready () {
-      setTimeout(() => {
-        this.$route.router.go({name: 'list'})
-      }, 2000)
+      this.$route.router.go({name: 'list'})
+      console.log('index')
     }
   }
 </script>

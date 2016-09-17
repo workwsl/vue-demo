@@ -6,6 +6,7 @@
 export default (router) => {
   router.map({
     '/': {
+      name: 'index',
       component: (resolve) => {
         require(['./views/index'], resolve)
       }
@@ -14,6 +15,12 @@ export default (router) => {
       name: 'list',
       component: (resolve) => {
         require(['./views/list'], resolve)
+      }
+    },
+    '/search': {
+      name: 'search',
+      component: (resolve) => {
+        require(['./views/search'], resolve)
       }
     }
   })
