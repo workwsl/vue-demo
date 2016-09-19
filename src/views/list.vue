@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <cn-header></cn-header>
+    <cn-header :left-show='leftshow' :right-show='rightshow' :title='title' ></cn-header>
     <div class="content">
       <p>我的左右两边有留白,我的左右两边有留白,我的左右两边有留白,我的左右两边有留白,我的左右两边有留白,我的左右两边有留白,我的左右两边有留白,我的左右两边有留白,我的左右两边有留白,我的左右两边有留白,我的左右两边有留白</p>
     </div>
@@ -11,7 +11,11 @@
   export default {
     // Options / Data
     data () {
-      return {}
+      return {
+        leftshow: true,
+        rightshow: true,
+        title: '全部'
+      }
     },
     components: {
       'cn-header': Header

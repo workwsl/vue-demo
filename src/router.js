@@ -22,6 +22,38 @@ export default (router) => {
       component: (resolve) => {
         require(['./views/search'], resolve)
       }
+    },
+    '/message': {
+      name: 'message',
+      component: (resolve) => {
+        require(['./views/message'], resolve)
+      },
+      auth: true
+    },
+    '/share': {
+      name: 'share',
+      component: (resolve) => {
+        require(['./views/share'], resolve)
+      }
+    },
+    '/job': {
+      name: 'job',
+      component: (resolve) => {
+        require(['./views/job'], resolve)
+      }
+    },
+    '/login': {
+      name: 'login',
+      component: (resolve) => {
+        require(['./views/login'], resolve)
+      }
+    },
+    /* 404路由 */
+    '*': {
+      name: 'index',
+      component: (resolve) => {
+        require(['./views/index'], resolve)
+      }
     }
   })
 }
