@@ -3,6 +3,8 @@ import VueRouter from 'vue-router' // vue router
 import VueResource from 'vue-resource' // vue-resource
 import routerMap from './router' // router config
 import App from './app'
+
+Vue.config.debug = true
 // use vuerouter
 Vue.use(VueRouter)
 Vue.use(VueResource)
