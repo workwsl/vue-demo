@@ -4,3 +4,6 @@ export const getLoginState = (state) => {
 export const getUserInfo = (state) => {
   return state.userInfo
 }
+export const getNavTabs = (state) => {
+  return state.navTabs
+}

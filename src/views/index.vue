@@ -8,7 +8,7 @@
 <script>
   export default {
     ready () {
-      this.$route.router.go({name: 'list'})
+      this.$route.router.go({name: 'all'})
       console.log('index')
     }
   }

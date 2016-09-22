@@ -11,22 +11,22 @@ export default (router) => {
         require(['./views/index'], resolve)
       }
     },
-    '/list': {
-      name: 'list',
+    '/all': {
+      name: 'all',
       component: (resolve) => {
-        require(['./views/list'], resolve)
+        require(['./views/all'], resolve)
       }
     },
-    '/search': {
-      name: 'search',
+    '/good': {
+      name: 'good',
       component: (resolve) => {
-        require(['./views/search'], resolve)
+        require(['./views/good'], resolve)
       }
     },
-    '/message': {
-      name: 'message',
+    '/ask': {
+      name: 'ask',
       component: (resolve) => {
-        require(['./views/message'], resolve)
+        require(['./views/ask'], resolve)
       },
       auth: true
     },

@@ -10,7 +10,28 @@ const state = {
     'loginname': '',
     'token': '',
     'userId': ''
-  }
+  },
+  navTabs: [{
+    name: '全部',
+    icon: 'menu',
+    path: '/all'
+  }, {
+    name: '精华',
+    icon: 'star',
+    path: '/good'
+  }, {
+    name: '分享',
+    icon: 'share',
+    path: '/share'
+  }, {
+    name: '问答',
+    icon: 'friends',
+    path: '/ask'
+  }, {
+    name: '招聘',
+    icon: 'gift',
+    path: '/job'
+  }]
 }
 
 const mutations = {

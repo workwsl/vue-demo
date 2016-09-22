@@ -24,7 +24,6 @@
 <script lang="">
   import Header from '../components/header'
   import { API } from '../common/api'
-  // import state from '../vuex/store'
   import {getLoginState, getUserInfo} from '../vuex/getter'
   import {isLogin, setUserInfo} from '../vuex/actions'
 
@@ -49,7 +48,6 @@
         })
       }
     },
-    // state: state,
     vuex: {
       actions: {
         isLogin: isLogin,
