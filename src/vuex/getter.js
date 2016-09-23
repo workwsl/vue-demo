@@ -7,3 +7,7 @@ export const getUserInfo = (state) => {
 export const getNavTabs = (state) => {
   return state.navTabs
 }
+
+export const getNavTabStatus = (state) => {
+  return state.navTabShow
+}

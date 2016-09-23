@@ -5,8 +5,11 @@ import { fetch } from './common'
  */
 const API = {
   // 登陆
-  login: function (accesstoken) {
+  login: (accesstoken) => {
     return fetch('accesstoken', {accesstoken})
+  },
+  userInfo: (namne) => {
+    return fetch('user/' + namne)
   }
 }
 

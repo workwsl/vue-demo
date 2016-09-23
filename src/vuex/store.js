@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 const state = {
   isLogin: false,
+  navTabShow: false,
   userInfo: {
     'avatar_url': '',
     'loginname': '',
@@ -45,10 +46,14 @@ const mutations = {
   },
   // 设置用户信息
   SETUSERINFO: (state, loginname, userId, avatarUrl, token) => {
-    state.loginname = loginname
-    state.userId = userId
-    state.avatar_url = avatarUrl
-    state.token = token
+    state.userInfo.loginname = loginname
+    state.userInfo.userId = userId
+    state.userInfo.avatar_url = avatarUrl
+    state.userInfo.token = token
+  },
+  // 设置navtab状态
+  SETNAVTABSTATUS: (state, status) => {
+    state.navTabShow = status
   }
 }
 

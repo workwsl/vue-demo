@@ -11,6 +11,13 @@ export default (router) => {
         require(['./views/index'], resolve)
       }
     },
+    '/user/:loginname': {
+      name: 'user',
+      component: (resolve) => {
+        require(['./views/user'], resolve)
+      },
+      auth: true
+    },
     '/all': {
       name: 'all',
       component: (resolve) => {
@@ -27,8 +34,7 @@ export default (router) => {
       name: 'ask',
       component: (resolve) => {
         require(['./views/ask'], resolve)
-      },
-      auth: true
+      }
     },
     '/share': {
       name: 'share',

@@ -6,3 +6,7 @@ export const isLogin = ({dispatch}) => {
 export const setUserInfo = ({dispatch}, loginName, userId, avatarUrl, token) => {
   dispatch('SETUSERINFO', loginName, userId, avatarUrl, token)
 }
+// 设置navtab状态
+export const setNavTabStatus = ({dispatch}, status) => {
+  dispatch('SETNAVTABSTATUS', status)
+}

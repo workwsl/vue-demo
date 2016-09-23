@@ -10,10 +10,11 @@
   </div>
 </template>
 <script lang="">
+  import {getLoginState} from '../vuex/getter'
+  import {isLogin} from '../vuex/actions'
   export default {
     // Options / Data
     ready () {
-      console.log(this.items)
     },
     data () {
       return {}
@@ -22,7 +23,15 @@
     computed: {},
     components: {
     },
-    methods: {}
+    methods: {},
+    vuex: {
+      actions: {
+        isLogin: isLogin
+      },
+      getters: {
+        getLoginState: getLoginState
+      }
+    }
   }
 </script>
 vscript

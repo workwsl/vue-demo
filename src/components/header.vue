@@ -1,45 +1,36 @@
 <template>
   <header class="bar bar-nav">
-    <a v-if="leftShow" class="icon icon-me pull-left"></a>
-    <a  v-if="rightShow" class="icon icon-edit pull-right"></a>
-    <h1 class="title">{{title}}</h1>
+      <a @click='goUser()'  class="icon icon-me pull-left"></a>
+      <h1 class="title">{{title}}</h1>
   </header>
 </template>
 <script lang="">
+  import {getLoginState, getUserInfo} from '../vuex/getter'
   export default {
     // Options / Data
     data () {
-      return {}
+      return {
+        name: ''
+      }
     },
-    props: ['title', 'leftShow', 'rightShow'],
-    computed: {},
-    methods: {}// ,
-    // watch: {},
-    // Options / DOM
-    // el () {},
-    // replace: true,
-    // template: '',
-    // Options / Lifecycle Hooks
-    // init () {},
-    // crated () {},
-    // beforeCompile () {},
-    // compiled () {},
-    // ready () {},
-    // attached () {},
-    // detached () {},
-    // beforeDestroy () {},
-    // destroyed () {},
-    // Options / Assets
-    // directives: {},
-    // elementDirectives: {},
-    // filters: {},
-    // components: {},
-    // transitions: {},
-    // partials: {},
-    // Options / Misc
-    // parent: null,
-    // events: {},
-    // mixins: [],
-    // name: ''
+    props: ['title'],
+    vuex: {
+      getters: {
+        getLoginState: getLoginState,
+        getUserInfo: getUserInfo
+      }
+    },
+    methods: {
+      goUser () {
+        let loginStatus = this.getLoginState
+        let redirect = encodeURIComponent(this.$route.path)
+        if (loginStatus) {
+          let userInfo = this.getUserInfo
+          this.$route.router.go({name: 'user', params: { loginname: userInfo.loginname }})
+        } else {
+          this.$route.router.go({name: 'login', query: {redirect}})
+        }
+      }
+    }
   }
 </script>
