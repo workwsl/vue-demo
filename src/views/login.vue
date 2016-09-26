@@ -1,6 +1,6 @@
 <template>
 <div class="">
-  <cn-header :title='title'></cn-header>
+  <cn-headersub :title='title'></cn-headersub>
   <div class="content">
     <div class="list-block">
       <ul>
@@ -22,7 +22,7 @@
   </div>
 </template>
 <script lang="">
-  import Header from '../components/header'
+  import headerSub from '../components/headerSub'
   import { API } from '../common/api'
   import {getLoginState, getUserInfo} from '../vuex/getter'
   import {isLogin, setUserInfo} from '../vuex/actions'
@@ -37,14 +37,17 @@
     },
     props: [],
     components: {
-      'cn-header': Header
+      'cn-headersub': headerSub
     },
     methods: {
       login: function () {
-        this.isLogin()
+        // let strToken = this.strToken
         API.login(this.strToken).then((data) => {
           let info = data.data
           this.setUserInfo(info.loginname, info.userId, info.avatar_url, info.token)
+          this.isLogin()
+          const redirect = decodeURIComponent(this.$route.query.redirect || '/')
+          this.$route.router.go(redirect)
         })
       }
     },

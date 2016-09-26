@@ -1,45 +1,35 @@
 <template>
   <div class="">
-    search
+    <cn-header title='精华'></cn-header>
+    <div class="content">
+      精华精华精华精华
+    </div>
   </div>
 </template>
-<script lang="">
+<script>
+  import Header from '../components/header'
+  import {getNavTabs, getNavTabStatus} from '../vuex/getter'
+  import {setNavTabStatus} from '../vuex/actions'
   export default {
     // Options / Data
     data () {
       return {
-        isIndex: false
       }
     },
-    props: [],
-    computed: {},
-    methods: {}// ,
-    // watch: {},
-    // Options / DOM
-    // el () {},
-    // replace: true,
-    // template: '',
-    // Options / Lifecycle Hooks
-    // init () {},
-    // crated () {},
-    // beforeCompile () {},
-    // compiled () {},
-    // ready () {},
-    // attached () {},
-    // detached () {},
-    // beforeDestroy () {},
-    // destroyed () {},
-    // Options / Assets
-    // directives: {},
-    // elementDirectives: {},
-    // filters: {},
-    // components: {},
-    // transitions: {},
-    // partials: {},
-    // Options / Misc
-    // parent: null,
-    // events: {},
-    // mixins: [],
-    // name: ''
+    components: {
+      'cn-header': Header
+    },
+    vuex: {
+      actions: {
+        setNavTabStatus: setNavTabStatus
+      },
+      getters: {
+        getNavTabs: getNavTabs,
+        getNavTabStatus: getNavTabStatus
+      }
+    },
+    ready () {
+      this.setNavTabStatus(true)
+    }
   }
 </script>

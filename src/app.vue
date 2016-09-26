@@ -38,7 +38,7 @@ export default {
     bottom: 2.5rem
 }
 .fade-transition {
-  transition: opacity .2s ease;
+  transition: opacity .3s ease;
 }
 
 .fade-enter,

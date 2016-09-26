@@ -24,6 +24,12 @@ export default (router) => {
         require(['./views/all'], resolve)
       }
     },
+    '/all/:id': {
+      name: 'all',
+      component: (resolve) => {
+        require(['./views/detail'], resolve)
+      }
+    },
     '/good': {
       name: 'good',
       component: (resolve) => {

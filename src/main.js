@@ -10,7 +10,12 @@ Vue.config.debug = true
 // use vuerouter
 Vue.use(VueRouter)
 Vue.use(VueResource)
-const router = new VueRouter()
+const router = new VueRouter({
+  hashbang: true,
+  history: false,
+  saveScrollPosition: true,
+  transitionOnLoad: true
+})
 // 登录中间验证，页面需要登录而没有登录的情况直接跳转登录
 router.beforeEach((transition) => {
   let auth = getLoginState(store.state)

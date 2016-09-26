@@ -8,8 +8,11 @@ const API = {
   login: (accesstoken) => {
     return fetch('accesstoken', {accesstoken})
   },
-  userInfo: (namne) => {
-    return fetch('user/' + namne)
+  userInfo: (name) => {
+    return fetch('user/' + name, null, 'GET')
+  },
+  getTopics: (tab) => {
+    return fetch('topics', {tab}, 'GET')
   }
 }
 
