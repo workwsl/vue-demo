@@ -24,8 +24,8 @@ export default (router) => {
         require(['./views/all'], resolve)
       }
     },
-    '/all/:id': {
-      name: 'all',
+    '/:tab/:id': {
+      name: 'tab',
       component: (resolve) => {
         require(['./views/detail'], resolve)
       }

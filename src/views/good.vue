@@ -1,23 +1,27 @@
 <template>
-  <div class="">
-    <cn-header title='精华'></cn-header>
-    <div class="content">
-      精华精华精华精华
-    </div>
+<div class="">
+  <cn-header title='精华'></cn-header>
+  <div class="content">
+    <cn-list :items='items'></cn-list>
   </div>
+</div>
 </template>
 <script>
+  import { API } from '../common/api'
   import Header from '../components/header'
+  import List from '../components/list'
   import {getNavTabs, getNavTabStatus} from '../vuex/getter'
   import {setNavTabStatus} from '../vuex/actions'
   export default {
     // Options / Data
     data () {
       return {
+        items: []
       }
     },
     components: {
-      'cn-header': Header
+      'cn-header': Header,
+      'cn-list': List
     },
     vuex: {
       actions: {
@@ -29,7 +33,13 @@
       }
     },
     ready () {
-      this.setNavTabStatus(true)
+      let self = this
+      self.setNavTabStatus(true)
+      API.getTopics('good').then((response) => {
+        self.items = response.body.data
+      })
     }
   }
 </script>
+<style scoped>
+</style>

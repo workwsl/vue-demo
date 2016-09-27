@@ -13,6 +13,9 @@ const API = {
   },
   getTopics: (tab) => {
     return fetch('topics', {tab}, 'GET')
+  },
+  getTopicsDetail: (id) => {
+    return fetch('topic/' + id, null, 'GET')
   }
 }
 

@@ -5,11 +5,16 @@ import routerMap from './router' // router config
 import App from './app'
 import store from './vuex/store'
 import { getLoginState } from './vuex/getter'
+import filters from './filters'
 
 Vue.config.debug = true
 // use vuerouter
 Vue.use(VueRouter)
 Vue.use(VueResource)
+
+// 实例化Vue的filter
+Object.keys(filters).forEach(k => Vue.filter(k, filters[k]))
+
 const router = new VueRouter({
   hashbang: true,
   history: false,
