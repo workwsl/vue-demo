@@ -13,11 +13,9 @@
     </li>
   </ul>
   </div>
-  <cn-loading></cn-loading>
 
 </template>
 <script>
-  import Loading from '../components/loading'
   export default {
     // Options / Data
     data () {
@@ -25,7 +23,6 @@
       }
     },
     components: {
-      'cn-loading': Loading
     },
     props: ['items']
   }
