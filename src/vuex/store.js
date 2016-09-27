@@ -6,6 +6,7 @@ Vue.use(Vuex)
 const state = {
   isLogin: false,
   navTabShow: false,
+  loading: false,
   userInfo: {
     'avatar_url': '',
     'loginname': '',
@@ -54,6 +55,9 @@ const mutations = {
   // 设置navtab状态
   SETNAVTABSTATUS: (state, status) => {
     state.navTabShow = status
+  },
+  ISLOADING: (state, status) => {
+    state.loading = status
   }
 }
 

@@ -1,12 +1,14 @@
 <template>
 <div class="">
   <cn-headersub :title='detail.tab | getTabStr detail.good detail.top'></cn-headersub>
+  <cn-loading></cn-loading>
   <div class="content detail-content">
-    {{{detail.content}}}
+    <h1 class="detail-title">{{detail.title}}</h1> {{{detail.content}}}
   </div>
 </template>
 <script lang="">
   import headerSub from '../components/headerSub'
+  import Loading from '../components/loading'
   import { API } from '../common/api'
   import {getLoginState, getUserInfo} from '../vuex/getter'
   import {setNavTabStatus} from '../vuex/actions'
@@ -21,7 +23,8 @@
     },
     props: [],
     components: {
-      'cn-headersub': headerSub
+      'cn-headersub': headerSub,
+      'cn-loading': Loading
     },
     methods: {
     },
@@ -49,12 +52,24 @@
   }
 </script>
 <style lang="scss">
-  .detail-content{
-    padding:  10px;
+.detail-content {
+    padding: 10px;
     background-color: #fff;
     word-break: break-all;
-    img{
-      max-width:100%;
+    .detail-title {
+        padding: 5px;
+        margin: 15px;
+        font-size: 18px;
+        color: #2c3e50;
+        line-height: 1.5;
+        background-color: #f0f0f0;
+        border-radius: 5px;
     }
-  }
+    img {
+        max-width: 100%;
+    }
+    .markdown-text {
+        font-size: 14px;
+    }
+}
 </style>

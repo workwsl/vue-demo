@@ -10,3 +10,7 @@ export const setUserInfo = ({dispatch}, loginName, userId, avatarUrl, token) => 
 export const setNavTabStatus = ({dispatch}, status) => {
   dispatch('SETNAVTABSTATUS', status)
 }
+
+export const isLoading = ({dispatch}, status) => {
+  dispatch('ISLOADING', status)
+}

@@ -8,21 +8,24 @@
           <div class="item-title" :class="item.tab | getTabClassName item.good item.top " :title="item.tab | getTabStr item.good item.top" v-text="item.title"></div>
         </div>
         <div class="item-subtitle">
-          <div class="info">
-            <time>{{item.reply_count}}/{{item.visit_count}}  </time>
-            <time style="text-align:right">  {{item.last_reply_at | getLastTimeStr true}}  </time>
-          </div>
-
+          <div class="info"> <time>{{item.reply_count}}/{{item.visit_count}}  </time> <time style="text-align:right">  {{item.last_reply_at | getLastTimeStr true}}  </time> </div>
         </div>
     </li>
-    </div>
+  </ul>
+  </div>
+  <cn-loading></cn-loading>
+
 </template>
 <script>
+  import Loading from '../components/loading'
   export default {
     // Options / Data
     data () {
       return {
       }
+    },
+    components: {
+      'cn-loading': Loading
     },
     props: ['items']
   }

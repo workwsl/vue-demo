@@ -14,3 +14,7 @@ export const getNavTabs = (state) => {
 export const getNavTabStatus = (state) => {
   return state.navTabShow
 }
+
+export const getLoading = (state) => {
+  return state.loading
+}
