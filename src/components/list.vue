@@ -10,10 +10,10 @@
         <div class="item-subtitle">
           <div class="info"> <time>{{item.reply_count}}/{{item.visit_count}}  </time> <time style="text-align:right">  {{item.last_reply_at | getLastTimeStr true}}  </time> </div>
         </div>
+      </div>
     </li>
   </ul>
-  </div>
-
+</div>
 </template>
 <script>
   export default {
@@ -21,8 +21,6 @@
     data () {
       return {
       }
-    },
-    components: {
     },
     props: ['items']
   }

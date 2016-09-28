@@ -25,7 +25,7 @@
   import headerSub from '../components/headerSub'
   import { API } from '../common/api'
   import {getLoginState, getUserInfo} from '../vuex/getter'
-  import {setNavTabStatus} from '../vuex/actions'
+  import {setNavTabStatus, setUserInfo, isLogin} from '../vuex/actions'
 
   export default {
     // Options / Data
@@ -53,7 +53,9 @@
     },
     vuex: {
       actions: {
-        setNavTabStatus: setNavTabStatus
+        setNavTabStatus: setNavTabStatus,
+        setUserInfo: setUserInfo,
+        isLogin: isLogin
       },
       getters: {
         getLoginState: getLoginState,
