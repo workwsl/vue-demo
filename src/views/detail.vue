@@ -5,7 +5,7 @@
     <h1 class="detail-title">{{detail.title}}</h1> {{{detail.content}}}
   </div>
 </template>
-<script lang="">
+<script>
   import headerSub from '../components/headerSub'
   import { API } from '../common/api'
   import {getLoginState, getUserInfo} from '../vuex/getter'
